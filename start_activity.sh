@@ -5,7 +5,7 @@ scheme=$1
 adb shell am start -a android.intent.action.VIEW -d $scheme
 sleep 5s
 
-python monitor_adb.py $scheme
+python swipe_log.py $scheme
 
 
 #

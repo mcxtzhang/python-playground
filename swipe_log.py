@@ -17,7 +17,7 @@ scheme = sys.argv[1]
 
 logHandler = LogHandler.LogHandler(scheme)
 # 后期可配置 循环次数
-for num in range(0, 4):
+for num in range(0, 20):
     print "begin swipe...."
     # 滑动策略后期可能会变
     commands.getstatusoutput("adb shell input swipe 800 800 200 200")
