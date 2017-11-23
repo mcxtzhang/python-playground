@@ -2,6 +2,8 @@
 # -*- coding: UTF-8 -*-
 import time
 
+from ZUtils import ZUtils
+
 KEY_BEGIN = "Profile data in ms:"
 KEY_END = "View hierarchy:"
 
@@ -97,7 +99,7 @@ class LogHandler:
         i = 1
         for key, values in self.__fileStringMap.items():
             file_output = open(
-                "monitor_result_%s_%s" % (time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime(time.time())), i), 'w')
+                "output/monitor_result_%s_%s" % (ZUtils.getTimeSuffix(), i), 'w')
             file_output.write(values)
             file_output.close()
             i = i + 1
