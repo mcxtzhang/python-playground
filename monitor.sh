@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 echo "begin start activity...."
+#接受参数 启动scheme
 scheme=$1
 adb shell am start -a android.intent.action.VIEW -d $scheme
 sleep 5s
