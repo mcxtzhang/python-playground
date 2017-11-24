@@ -5,8 +5,13 @@ import sys
 
 import os
 
+from ZUtils import ZUtils
+
 configFilePath = sys.argv[1]
 file = open(configFilePath)
+
+# todo 正式使用记得删除
+ZUtils.cleanCache()
 
 while 1:
     line = file.readline()
