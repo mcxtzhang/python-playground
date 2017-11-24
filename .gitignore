@@ -103,3 +103,5 @@ ENV/
 # custom
 /logs
 /output
+/butter/processed_stuffs
+/butter/stuffs

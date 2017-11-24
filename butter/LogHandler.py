@@ -3,6 +3,7 @@
 import time
 
 from ZUtils import ZUtils
+from stuff_file_utils import stuff_file
 
 KEY_BEGIN = "Profile data in ms:"
 KEY_END = "View hierarchy:"
@@ -98,7 +99,7 @@ class LogHandler:
         # 遍历字典列表
         i = 1
         for key, values in self.__fileStringMap.items():
-            with (open("output/monitor_result_%s_%s" % (ZUtils.getTimeSuffix(), i), 'w')) as file_output:
+            with (open("%s/processed_log_%s_%s" % (stuff_file.get_processed_stuff_dir(),ZUtils.getTimeSuffix(), i), 'w')) as file_output:
                 file_output.write(values)
                 i = i + 1
 

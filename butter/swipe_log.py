@@ -1,13 +1,12 @@
 # -*- coding: UTF-8 -*-
 import commands
 import sys
-
 import time
 
 import LogHandler
-
 # print "begin start activity...."
 from ZUtils import ZUtils
+from stuff_file_utils import stuff_file
 
 scheme = sys.argv[1]
 # scheme = "dianping://cinemalist"
@@ -17,6 +16,7 @@ scheme = sys.argv[1]
 # print output
 # time.sleep(5)
 
+stuff_file.create_dirs()
 logHandler = LogHandler.LogHandler(scheme)
 # 后期可配置 循环次数 ,多加m次 作为log的补偿，只dump gfxinfo ，不 swipe。防止swipe后，log没有统计完全。
 loop_count = 5
@@ -32,7 +32,7 @@ for num in range(0, loop_count + m):
     # 休眠1s 尽量保证滑动结束
     time.sleep(1)
 
-    fileName = "logs/log_%s_%s" % (ZUtils.getTimeSuffix(), num)
+    fileName = "%s/log_%s_%s" % (stuff_file.get_stuff_dir(),ZUtils.getTimeSuffix(), num)
 
     print "begin dumpsys and save to file:%s" % fileName
     (status, output) = commands.getstatusoutput(
