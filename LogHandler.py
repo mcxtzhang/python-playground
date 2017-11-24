@@ -98,11 +98,9 @@ class LogHandler:
         # 遍历字典列表
         i = 1
         for key, values in self.__fileStringMap.items():
-            file_output = open(
-                "output/monitor_result_%s_%s" % (ZUtils.getTimeSuffix(), i), 'w')
-            file_output.write(values)
-            file_output.close()
-            i = i + 1
+            with (open("output/monitor_result_%s_%s" % (ZUtils.getTimeSuffix(), i), 'w')) as file_output:
+                file_output.write(values)
+                i = i + 1
 
     def _removeUselessInfo(self, fileString):
         # remove useless log
