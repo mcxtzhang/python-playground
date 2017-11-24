@@ -50,7 +50,7 @@ class LogHandler:
                     temp = temp + activityInfo
 
                     # 3 fps info
-                    temp = temp + fileString[completeIndex: secondProfileIndex].strip()
+                    temp = temp + fileString[completeIndex: secondProfileIndex]
                     self.__fileStringMap[activityInfo] = temp
 
                 # 截取 继续循环
@@ -82,7 +82,7 @@ class LogHandler:
                     activityInfo = fileString[0: profileIndex].strip()
 
                     # 3 fps info
-                    temp = fileString[completeIndex: secondProfileIndex].strip()
+                    temp = fileString[completeIndex: secondProfileIndex]
                     self.__fileStringMap[activityInfo] = self.__fileStringMap[activityInfo] + temp
 
                 # 截取 继续循环
