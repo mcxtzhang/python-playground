@@ -26,7 +26,7 @@ for num in range(0, 10):
     # print status
     # print output
     fileName = "logs/log_%s_%s" % (ZUtils.getTimeSuffix(), num)
-    time.sleep(3)
+    time.sleep(1)
 
     print "begin dumpsys and save to file:%s" % fileName
     (status, output) = commands.getstatusoutput(
