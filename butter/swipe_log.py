@@ -3,9 +3,9 @@ import commands
 import sys
 import time
 
-import LogHandler
+import stuff_handler
 # print "begin start activity...."
-from ZUtils import ZUtils
+from z_utils import ZUtils
 from stuff_file_utils import stuff_file
 
 scheme = sys.argv[1]
@@ -17,7 +17,7 @@ scheme = sys.argv[1]
 # time.sleep(5)
 
 stuff_file.create_dirs()
-logHandler = LogHandler.LogHandler(scheme)
+logHandler = stuff_handler.LogHandler(scheme)
 # 后期可配置 循环次数 ,多加m次 作为log的补偿，只dump gfxinfo ，不 swipe。防止swipe后，log没有统计完全。
 loop_count = 5
 m = 1

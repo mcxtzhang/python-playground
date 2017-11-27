@@ -2,7 +2,7 @@
 # -*- coding: UTF-8 -*-
 import time
 
-from ZUtils import ZUtils
+from z_utils import ZUtils
 from stuff_file_utils import stuff_file
 
 KEY_BEGIN = "Profile data in ms:"
