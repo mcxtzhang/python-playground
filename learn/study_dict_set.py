@@ -2,6 +2,7 @@
 # -*- coding: UTF-8 -*-
 # dict
 d = {'a': 1, 'b': 2, 'c': 3}
+#print d['tan90']
 print d['a']
 
 # 通过 in 判断key是否存在
