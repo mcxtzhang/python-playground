@@ -28,12 +28,12 @@ print int2('10')
 # 注意到上面的新的int2函数，仅仅是把base参数重新设定默认值为2，但也可以在函数调用时传入其他值：
 print int2('10', base=10)
 
-#创建偏函数时，实际上可以接收函数对象、*args和**kw这3个参数
-#上面相当于指定了kw
-#下面相当于指定了args
+# 创建偏函数时，实际上可以接收函数对象、*args和**kw这3个参数
+# 上面相当于指定了kw
+# 下面相当于指定了args
 print '指定偏函数的  args'
-max10 = functools.partial(max,10)
+max10 = functools.partial(max, 10)
 print max10(1)
-print max10(13,4)
-print max10(1,5,6,7,8,8)
-print max10(1,9,0)
+print max10(13, 4)
+print max10(1, 5, 6, 7, 8, 8)
+print max10(1, 9, 0)
