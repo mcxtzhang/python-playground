@@ -2,10 +2,11 @@
 echo "begin start activity...."
 #接受参数 启动scheme
 scheme=$1
+echo $scheme
 adb shell am start -a android.intent.action.VIEW -d $scheme
 sleep 5s
 
-python swipe_log.py $scheme
+#python swipe_log.py $scheme
 
 
 #
