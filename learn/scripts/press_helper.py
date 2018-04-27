@@ -2,5 +2,8 @@
 # -*- coding: UTF-8 -*-
 import commands
 
+import time
+
 while True:
-    commands.getoutput("adb shell input tap 877 1022")
+    #time.sleep(1)
+    commands.getoutput("adb shell input tap 949 1014")
