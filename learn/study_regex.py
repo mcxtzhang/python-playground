@@ -64,3 +64,10 @@ else:
 s = 'HT6CF1700129\tdevice'
 if re.match("^\w+\tdevice$", s):
     print "满足"
+
+bounds = "[0,189][1080,1652]"
+result = re.match("\[(\d*)\,(\d*)\]\[(\d*)\,(\d*)\]", bounds)
+if result:
+    print "yeah "
+else:
+    print "No"
