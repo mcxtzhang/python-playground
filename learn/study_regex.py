@@ -71,3 +71,12 @@ if result:
     print "yeah "
 else:
     print "No"
+
+scheme="dianping://home"
+regex = '^dianping://([0-9a-zA-Z\_]*)[\n?]?.*'
+m = re.match(regex, scheme)
+if m:
+    host = m.group(1)
+    print host
+else:
+    print 'error'

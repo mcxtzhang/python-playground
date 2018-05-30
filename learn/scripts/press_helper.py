@@ -6,4 +6,4 @@ import time
 
 while True:
     #time.sleep(1)
-    commands.getoutput("adb shell input tap 949 1014")
+    commands.getoutput("adb shell input tap 200 200")
