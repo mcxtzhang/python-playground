@@ -72,7 +72,7 @@ if result:
 else:
     print "No"
 
-scheme="dianping://home"
+scheme = "dianping://home"
 regex = '^dianping://([0-9a-zA-Z\_]*)[\n?]?.*'
 m = re.match(regex, scheme)
 if m:
@@ -80,3 +80,12 @@ if m:
     print host
 else:
     print 'error'
+
+sum = 0
+a = 1
+sum += a
+print sum
+
+temp = "Error: Activity not started, unable to resolve Intent { act=android.intent.action.VIEW dat=dianping://moviemainauto?tab=0 flg=0x10000000 }"
+if re.match("(.*)Activity not started(.*)", temp):
+    print "match"
