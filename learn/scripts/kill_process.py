@@ -6,6 +6,7 @@ import commands
 import re
 
 pkg_name = "com.dianping.v1"
+#pkg_name = "com.xingin.xhs"
 o = commands.getoutput("adb shell ps | grep %s$" % (pkg_name))
 temp_list = re.split("\s+", o)
 print "shell ps | grep %s result:%s" % (pkg_name, temp_list)
