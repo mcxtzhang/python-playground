@@ -6,6 +6,8 @@ import os
 from PIL import Image
 from PIL import ImageFilter
 
+from learn.scripts.pic.BTCError import BTCError
+
 DEBUG = False
 
 
@@ -21,15 +23,13 @@ class BoundsTransparentChecker:
         image = Image.open(self.__image_path)
         image.convert("RGBA")
         result_top = self.checkBoundsTransparentTop(image)
-        #
-        # if result_top:
-        #     print "！！图片有问题"
-        # else:
-        #     print "@@ 图片没毛病"
-
         result_bottom = self.checkBoundsTransparentBottom(image)
         result_left = self.checkBoundsTransparentLeft(image)
         result_right = self.checkBoundsTransparentRight(image)
+        if result_top or result_bottom or result_left or result_right:
+            return BTCError(self.__image_path, result_top, result_bottom, result_left, result_right)
+        else:
+            return None
 
     def checkBoundsTransparentTop(self, image):
         pixdatas = image.load()
@@ -99,4 +99,8 @@ class BoundsTransparentChecker:
 if __name__ == '__main__':
     checker = BoundsTransparentChecker("./cropped.png")
     checker = BoundsTransparentChecker("./alpha_pic_1.png")
-    checker.boot()
+    result = checker.boot()
+    if result:
+        result.printMsg()
+    else:
+        print "这张图片没毛病"
